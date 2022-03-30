@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block style %}
+.regis{
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   text-align:center;
+   transform: translate(-50%, -50%)
+}
+.form-input{
+border-radius:10px;
+border: 2px solid #00008B;
+padding: 10px;
+
+}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="regis">
+    <p>{{ error }}</p>
+    <h1 style="text-align:center; color:#00008B; margin-bottom:20%;">Регистрация</h1>
+        <form action="" method="post">
+        {% csrf_token %}
+            <p>{{ form.name }}</p>
+            <p>{{ form.mail }}</p>
+            <p>{{ form.password }}</p>
+            <p style="text-align:center; padding:12px;"><input type="submit" value="Зарегистрироваться" class="btn btn-outline-primary me-2"></p>
+        </form>
+    <p style="text-align:center; margin-top:20%;"><a href="{% url 'login' %}">Уже зарегистрированы?</a></p>
+</div>
+{% endblock %}

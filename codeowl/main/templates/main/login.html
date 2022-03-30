@@ -1,0 +1,46 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block style %}
+.login{
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+text-align:center;
+transform: translate(-50%, -50%)
+}
+.form-input{
+border-radius:10px;
+border: 2px solid #00008B;
+padding: 10px;
+}
+{% endblock %}
+
+
+{% block content %}
+<div class="login">
+    {% if form.errors %}
+    <p>Неправильный Логин или Пароль</p>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <p>Вы уже зарегистрированы</p>
+    {% else %}
+    <h2 style="text-align:center; color:#00008B; margin-bottom:20%;">Вход</h2>
+    <p style="color:red;">{{ errors }}</p>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <p>{{ form.name }}</p>
+        <p>{{ form.password }}</p>
+        <input type="submit" value="Войти" class="btn btn-outline-primary me-2"/>
+        <input type="hidden" name="next" value="{{ next }}"/>
+    </form>
+    <p style="margin-top:20%;"><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+    <p><a href="{% url 'registration' %}">Зарегистрироваться</a></p>
+    {% endif %}
+</div>
+{% endblock %}

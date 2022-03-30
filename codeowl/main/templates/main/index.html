@@ -1,0 +1,53 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<header class="head">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description ">
+            <h1>
+                CodeOwl
+                <p>Исправляйте ошибки в один клик</p>
+                <a href="#project">
+                    <button class="btn btn-outline-secondary btn-lg">Узнать больше</button>
+                </a>
+            </h1>
+        </div>
+    </div>
+
+</header>
+<div class="about" id="project">
+    <div class="container">
+        <h1 class="text-center">О нас</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12" style="display: flex; align-items:center;">
+                <img src="{% static 'main/pictures/logo.jpg' %}" class="img-fluid">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 desc"><a name="about"></a>
+                <p>Тратите много времени на отладку? Надоело листать форумы в поиске причины ошибки? <br>Проект CodeOwl
+                    — сервис для быстрого устранения ошибок. Вы работаете в привычной среде - Jupyter Notebook с
+                    установленным дополнением. Достаточно выделить ячейку, в которой произошла ошибка, и нажать Ctrl +
+                    Q. Наша система самостоятельно предложит Вам оптимальный вариант решения. Сервис анализирует не
+                    только traceback, но и весь код, вызвавший ошибку, благодаря чему Вы получаете качественные ответы.
+                    Сэкономьте до 90% времени на отладку кода. <br>
+                    <a href="/registration/">Попробовать</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="howitworks" id="howitworks">
+    <h1 class="text-center">Как это работает</h1>
+    <div class="container">
+        <img src="https://ie.wampi.ru/2022/03/21/merge.gif" class="img-fluid">
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'main/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/js/bootstrap.min.js' %}"></script>
+{% endblock %}

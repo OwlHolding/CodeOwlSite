@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+Веб-версия
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" class="search">
+    {% csrf_token %}
+    {{ form.search }}
+    <input type="submit" name="" value="" class="submit"/>
+</form>
+<ul></ul>
+{% if result %}
+<div class="res">
+    <p>{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+О нас
+{% endblock %}
+
+{% block style %}
+.main{
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   text-align:center;
+   transform: translate(-50%, -50%)
+}
+.img-container{
+    display: inline-block;
+    width:50vw;
+}
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <h1 style="text-align:center; color:#00008B; margin-bottom:5%;">О нас</h1>
+    <p style="margin-top:1%; max-width:50vw;"> Ищешь решение ошибки по несколько часов? Представляем наш проект - CodeOwl сервис для быстрого
+                    устранения ошибок. Вы работаете в привычной среде - Jupyter Notebook с установленным дополнением,
+                    стоит произойти ошибке, вместо начала несколько часового поиска причины, просто жмете Ctrl + Q и
+                    наша система сама генерирует решение для вашей проблемы. Сервис анализирует не только сам traceback,
+                    но и весь код ячейки, вызвавшей ошибку. В результате решение идеально подходит для вашей проблемы.</p>
+    <h2 style="text-align:center; color:#00008B; margin-top:10%;">Наша команда</h2>
+    <div class-="img-container">
+        <img>
+        <img>
+        <img>
+    </div>
+</main>
+{% endblock %}
+
