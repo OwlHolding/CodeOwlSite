@@ -19,11 +19,11 @@ import io
 
 from .Parser import parse
 from .Classifier import AuroraPredictor
-from .Sandbox import sand_generate, sand_init, sand_lock
+from .PreEngine import scan
 
 from .neuralengine import generate, init, lock
 init()
-sand_init()
+
 
 # Attention, enabling this parameter may lead to a decrease in performance
 FIREWALL_ACTIVE = True
@@ -153,14 +153,13 @@ def callnn(code, traceback):
         req = f'Error: {traceback} Answer:'
         return generate(req)[16 + len(traceback):]
 
-@csrf_exempt
-def callsandbox(code, traceback):
-    with sand_lock:
-        answer = sand_generate(code)
-        if "Unable to import" in answer:
-            return callnn(code, traceback)
-        else:
-            return answer
+
+def callpre(code, traceback):
+    answer = scan(code)
+    if "Unable to import" in answer:
+        return callnn(code, traceback)
+    else:
+        return answer
 
 
 def solve(code, traceback):
