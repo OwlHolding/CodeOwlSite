@@ -22,7 +22,7 @@ python -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
-Place your GPT-2 in the codeowl/main/static/models folder or download a new model using the command:
+To download and connect the model, run the command:
 ```
 python downloadmodel.py
 ```
