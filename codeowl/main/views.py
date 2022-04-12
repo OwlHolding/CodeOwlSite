@@ -170,7 +170,7 @@ def solve(code, traceback):
     solution = classifier.predict(traceback)
     if solution:
         return solution
-    return callsandbox(code, traceback)
+    return callpre(code, traceback)
 
 
 @csrf_exempt
