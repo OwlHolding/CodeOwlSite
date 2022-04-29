@@ -1,5 +1,4 @@
-# CodeOwl Backend
-
+# CodeOwl Site
 ### About 
 Server of CodeOwl project. Ensures the coordinated operation of the site, neural network and other parts.
 
